@@ -30,7 +30,7 @@ var listTag = document.querySelector(".basket ol");
 var tag = listTag.children;
 // 1. ol dom 에  children을 뒤져서 같은 value 를 가지고 있는 child를 찾는다.
 function addValue (todoORnumber){
-  if (todoORnumber === liList(elElement){
+  if (todoORnumber === liList('elElement')){
     red("이미있다.."); // 빨간텍스트를 호출한다.
   } else if (eleList(eleList) > todoORnumber.length ){
     // 2. 같은 value가 없으면 문자열의 수를 세어서 그 수 보다 크거나 같으면 todoORnumber를 createElement하여 뒤에
@@ -38,7 +38,7 @@ function addValue (todoORnumber){
     // insertBefore를 사용하려면 부모 요소.insertBefore(새로운 노드, 기준노드[번호])
     function plusNode (index, text) {
       var tagList = document.createElement("li");
-      var tagText = document.createTextNode(text);
+      var tagText = document.createTextNode(todoORnumber);
 
       tagList.appendChild(tagText);
       listTag.insertBefore(tagList, tag[index]);
@@ -47,7 +47,7 @@ function addValue (todoORnumber){
 }
 
 function removeValue(todoORnumber) {
-  if (todoORnumber === eleList(elNumber)) {
+  if (todoORnumber !== eleList('elNumber')) {
     red("이미있다.."); // 빨간텍스트를 호출한다.
   } else {
     function minusNode (min) {
