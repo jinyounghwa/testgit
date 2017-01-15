@@ -1,3 +1,21 @@
-span {
+html {
+  font-size: 1em;
+}
+body > span {
 color :red;
+font-family: Helvetica;
+}
+span {
+  color :blue;
+}
+.border {
+  border-style: solid;
+  border-width: 0.5vh;
+  padding: 1px 1px 1px 15px;
+}
+.border {
+  font-size: 3rem;
+}
+.textsize {
+  font-size: 1.7rem;
 }
