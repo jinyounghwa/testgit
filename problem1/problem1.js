@@ -15,55 +15,46 @@
  */
 
 // actionType과 todoORnumber를 분류한다.
-function executeItemNode(actionType, todoORnumber)  {
-switch (actionType) {
-  case "add":{
-      addValue(todoORnumber);
-  } break;
-  case "remove":{
-      removeValue(todoORnumber);
-  }break;
-  }
-}
-
-var listTag = document.querySelector(".basket ol");
-var tag = listTag.children;
-// 1. ol dom 에  children을 뒤져서 같은 value 를 가지고 있는 child를 찾는다.
-function addValue (todoORnumber){
-  if (todoORnumber === liList('elElement')){
-    red("이미있다.."); // 빨간텍스트를 호출한다.
-  } else if (eleList(eleList) > todoORnumber.length ){
-    // 2. 같은 value가 없으면 문자열의 수를 세어서 그 수 보다 크거나 같으면 todoORnumber를 createElement하여 뒤에
-    // insertBefore를 사용하여 추가한다.
-    // insertBefore를 사용하려면 부모 요소.insertBefore(새로운 노드, 기준노드[번호])
-    function plusNode (index, text) {
-      var tagList = document.createElement("li");
-      var tagText = document.createTextNode(todoORnumber);
-
-      tagList.appendChild(tagText);
-      listTag.insertBefore(tagList, tag[index]);
+(function(){
+  function executeItemNode(actionType, todoORnumber)  {
+  switch (actionType) {
+    case "add":{
+        addValue(todoORnumber);
+    } break;
+    case "remove":{
+        removeValue(todoORnumber);
+    } break;
     }
   }
-}
+/*
+addValue : 텍스트를 추가하는 함수
+removeValue : 숫자를 받아 제거하는 함수
+eleList : li 문자열의 수 (숫자)
+liList : li 문자열 (문자)
+red : 중복되는 부분에 있는 경우 경고 문구 호출
+sort : 정렬
 
-function removeValue(todoORnumber) {
-  if (todoORnumber !== eleList('elNumber')) {
-    red("이미있다.."); // 빨간텍스트를 호출한다.
-  } else {
-    function minusNode (min) {
-      tagList.removeChild(tag[min]);
-    }
-  }
-}
+addValue 의 업무
+1. todoORnumber가 문자인지 확인한다.
+2. todoORnumber와 textContent로 순회한 텍스트와 비교하여 같은것이 있으면 경고
+2. todoORnumber 문자가 맞으면 기존에 있는 리스트에 li를 추가하여 넣는다.
+2. 문자에서 테그를 분리한 후 텍스트가 되고 이 분리한 것을 빈 배열에 넣는다.
+3. 넣어진 배열에서 length를 구하면 문자열의 길이가 된다.
+4. 문자열의 길이 순으로 정렬하고 li를 추가한다.
+
+remove 의 업무
+1. todoORnumber 가 숫자인지 확인한다.
+2. todoORnumber가 숫자가 맞으면
+3. todoORnumber의 숫자가 li 리스트의 숫자보다 크면 경고이고 0이하 이어도 경고
+4.li 리스트의 숫자와 todoORnumber의 숫자와 비교하여 같은게 있으면 삭제
+
+*/
 
 
-// function plusTag(todoORnumber){ // 추가는 되지만 insertBefore를 사용하기 어렵다.
-//   var li = document.createElement("li");
-//   li.textContent = todoORnumber;
-// }
 
-var redNode = document.querySelector(".message");
+
 function red(error) {
+  var redNode = document.querySelector(".message");
   redNode.innerHTML = error;
   redNode.style.color= "red";
   setTimeout(function() {
@@ -73,15 +64,7 @@ function red(error) {
 
 
 
-var el = document.querySelector("ol");
-function eleList (){
-for (var i = 0; i < el.children.length; i++) {
-  elNumber = el.children[i].textContent.length // li 문자열의 수를 구함
-}};
-function liList () {
- for (var i = 0; i < el.children.length; i++) {
-  elElement = el.children[i].textContent; // li 문자열을 구함
-}};
+
 
 
 
@@ -106,4 +89,5 @@ controller.addEventListener("click", function(evt) {
   var inputValue = btn.previousElementSibling.value;
   var actionType = btn.className;
   executeItemNode(actionType, inputValue);
-});
+    });
+})();
