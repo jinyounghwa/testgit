@@ -19,9 +19,9 @@ cencle.addEventListener("click", function(evt){
 var searchInput = document.querySelector('div .input');
 searchInput.addEventListener("input", function(evt){
 var textOver = document.querySelector("section li");
-  if (evt.target.value.length > 19) {
-    textOver.style.display = "block"
-  }else {
+  if (evt.target.value.length < 19) {
     textOver.style.display = "none"
+  }else {
+    textOver.style.display = "block"
   }
 })
