@@ -15,7 +15,7 @@
  */
 
 // actionType과 todoORnumber를 분류한다.
-(function(){
+
   function executeItemNode(actionType, todoORnumber)  {
   switch (actionType) {
     case "add":{
@@ -35,7 +35,7 @@ red : 중복되는 부분에 있는 경우 경고 문구 호출
 sort : 정렬
 
 addValue 의 업무
-1. todoORnumber가 문자인지 확인한다.
+1. todoORnumber가 문자인지 확인한다. : typeof로 비교하려 했는데 숫자도 문자로 인식한다. (새로운거 배웠다.)
 2. todoORnumber와 textContent로 순회한 텍스트와 비교하여 같은것이 있으면 경고
 2. todoORnumber 문자가 맞으면 기존에 있는 리스트에 li를 추가하여 넣는다.
 2. 문자에서 테그를 분리한 후 텍스트가 되고 이 분리한 것을 빈 배열에 넣는다.
@@ -49,6 +49,22 @@ remove 의 업무
 4.li 리스트의 숫자와 todoORnumber의 숫자와 비교하여 같은게 있으면 삭제
 
 */
+
+
+// function addValue (todoORnumber) {
+//   if (todoORnumber !== 'string') {
+//     console.log('스트링');
+//   }else {
+//     console.log('스트링이 아님');
+//     }
+// }
+
+
+
+
+
+
+
 
 
 
@@ -90,4 +106,3 @@ controller.addEventListener("click", function(evt) {
   var actionType = btn.className;
   executeItemNode(actionType, inputValue);
     });
-})();
