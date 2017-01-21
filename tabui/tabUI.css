@@ -1,0 +1,67 @@
+header p {
+  text-align: center;
+}
+.userId {
+  text-align: center;
+}
+.userMessage {
+  text-align: center;
+}
+.userSNSInfo {
+  text-align: center;
+  overflow: auto;
+}
+.userSNSInfo li {
+  display: inline-block;
+  float: left;
+  margin-left: 10px;
+}
+.userSNSInfo li span {
+  clear: both;
+}
+.userSNSInfo div {
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}
+.my_position ul {
+  display: inline-block;
+  float: left;
+}
+nav {
+  height: 100px;
+  clear: both;
+  overflow: auto;
+}
+nav div {
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+nav div div  {
+  float: left;
+  margin-left: 1px;
+}
+
+nav div div span{
+  display: inline-block;
+  width: 200px;
+  height: 30px;
+  position: relative;
+}
+nav div div span span {
+  display: inline-block;
+  position: absolute;
+  border: 1px solid gray;
+  text-align: center;
+  padding-top: 10px;
+}
+section ul {
+  margin-top: -30px;;
+}
+.selectedTab {
+  background-color: #df9371;
+  height: 41px;
+  width: 201px;
+}
