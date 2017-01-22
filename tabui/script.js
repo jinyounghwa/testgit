@@ -1,7 +1,7 @@
-var position = document.querySelector("#position");
-var friend = document.querySelector("#friend");
-var theme = document.querySelector('#theme');
-var news = document.querySelector('#news');
+// var position = document.querySelector("#position");
+// var friend = document.querySelector("#friend");
+// var theme = document.querySelector('#theme');
+// var news = document.querySelector('#news');
 var btns = document.querySelectorAll('.tab');
 btns = Array.prototype.slice.call(btns);    // NodeList를 Array로 만들기 위해서 넣었다.
 /*.call 매서드 : */
