@@ -67,7 +67,6 @@ oReq.addEventListener("load", function(res) {
 
   var res = JSON.parse(res.target.responseText);
   var show = document.querySelector(".eleDisplayShow");
-
   show.innerHTML = "<ul><li><div class='myName'>" + res.title + "</div><div class='myDesc'>" + res.body + "</div></li></ul>";
-
+  localStorage.setItem(res, show.innerHTML);
 });
