@@ -1,11 +1,16 @@
-
-
-
+// 1. 시작점으로 하는함수
+document.addEventListener("DOMContentLoad", function(){
+init(); //초기화 하는 함수 (시작 포인트)
+})
+function init () { // 시작 할 때 쓰는 함수
 var btns = document.querySelectorAll('.tab');
 btns = Array.prototype.slice.call(btns);
+var oReq = new XMLHttpRequest();
+}
 
 
-btns.forEach(function (el, idx) {
+
+var selectedBtn = btns.forEach(function (el, idx) {
   el.addEventListener("click", function (e) {
 
     var found = null;
@@ -34,9 +39,8 @@ btns.forEach(function (el, idx) {
 });
 
 
-var oReq = new XMLHttpRequest();
-oReq.addEventListener("load", function(res) {
 
+var telNet = oReq.addEventListener("load", function(res) {
   var res = JSON.parse(res.target.responseText);
   var show = document.querySelector(".eleDisplayShow");
   show.innerHTML = "<ul><li><div class='myName'>" + res.title + "</div><div class='myDesc'>" + res.body + "</div></li></ul>";
