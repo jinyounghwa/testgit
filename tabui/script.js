@@ -1,6 +1,4 @@
 
-
-
 var btns = document.querySelectorAll('.tab');
 btns = Array.prototype.slice.call(btns);
 
@@ -39,5 +37,10 @@ oReq.addEventListener("load", function(res) {
 
   var res = JSON.parse(res.target.responseText);
   var show = document.querySelector(".eleDisplayShow");
-  show.innerHTML = "<ul><li><div class='myName'>" + res.title + "</div><div class='myDesc'>" + res.body + "</div></li></ul>";
+  var titleName = res.title;
+  var titleBody = res.body;
+  // var myStr = "<ul><li><div class='myName'>{{titleName}}</div></div><div class='myDesc'>{{titleBody}}</div></li></ul>";
+  var template = document.querySelector("#jin").innerText;
+  myStr = template.replace("{{titleName}}","jinyoughwa").replace("{{titleBody}}","116");
+  show.innerHTML = myStr;
 });

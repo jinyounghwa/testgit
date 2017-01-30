@@ -16,7 +16,7 @@
 
 // actionType과 todoORnumber를 분류한다.
 
-  function executeItemNode(actionType, todoORnumber)  {
+function executeItemNode(actionType, todoORnumber)  {
   switch (actionType) {
     case "add":{
         addValue(todoORnumber);
@@ -35,15 +35,9 @@ red : 중복되는 부분에 있는 경우 경고 문구 호출
 sort : 정렬
 
 addValue 의 업무
- todoORnumber가 문자인지 확인한다. : typeof로 비교하려 했는데 숫자도 문자로 인식한다. (새로운거 배웠다.)
- todoORnumber와 textContent로 순회한 텍스트와 비교하여 같은것이 있으면 경고
- todoORnumber 문자가 맞으면 기존에 있는 리스트에 li를 추가하여 넣는다.
- 리스트를 추가할 때 사용하는 변수
--oldText : 위치를 특정하는 변수
--
- 문자에서 테그를 분리한 후 텍스트가 되고 이 분리한 것을 빈 배열에 넣는다.
- 넣어진 배열에서 length를 구하면 문자열의 길이가 된다.
- 문자열의 길이 순으로 정렬하고 li를 추가한다.
+todoORnumber가 문자인지 알 방법이 없다. (다들 이거 신경 안 쓰더라)
+1. 우선 두개의 인자를 가지고 있다.
+
 
 remove 의 업무
 1. todoORnumber 가 숫자인지 확인한다.
@@ -54,11 +48,7 @@ remove 의 업무
 */
 
 //추가하는 함수
-function addValue (work) {
-var textNode = document.querySelector(".basket ol");
-var oldText = document.createElement("li");
-var newText = document.createTextNode(work);
-}
+
 
 
 
@@ -87,15 +77,6 @@ function red(error) {
 
 
 
-/*
- * 3번문제는 여기에 자세히 설명을 넣으시면 됩니다.
- * controller의 클래스를 기준으로 controller의 노드들을 가져옵니다.
- * controller는 addEventListener라는 매서드를 실행합니다. 그것은 클릭이라는 이벤트로 evt라는 인자를 받는 함수를 호출합니다.
- * 만약 btn.tagName이 버튼이라면 반환합니다.
- * btn에 인접한 노드의 벨류를 inputValue에 넣고
- * actionType에 bth클래스를 넣습니다.
- * 마지막으로 그것을 executeItemNode 함수에 두 변수를 인자로 넣고 위의 executeItemNode함수를 호출합니다.
- */
 
 
 var controller = document.querySelector(".controller");
